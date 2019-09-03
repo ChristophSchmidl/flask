@@ -1,6 +1,7 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, request
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
 
@@ -12,18 +13,21 @@ db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 db.init_app(app)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     # result_value = "SELECT * FROM user"
 
     #result = db.session.execute('INSERT INTO user VALUES(:name);', {'name': 'Mike'})
-    result = db.session.execute('SELECT * FROM user;')
+    #result = db.session.execute('SELECT * FROM user;')
     # no commit needed?
 
-    for r in result:
-        print(r)
-    return "success"
-    #return redirect(url_for('about'))
+    #for r in result:
+    #    print(r)
+    #return "success"
+
+    if request.method == 'POST':
+        return request.form['password']
+    return render_template('index.html')
 
 @app.route('/about')
 def about():
@@ -41,6 +45,10 @@ def fruits():
 @app.route('/css')
 def css():
     return render_template('css.html')
+
+@app.errorhandler(404)
+def page_not_found():
+    return "This page was not found."
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

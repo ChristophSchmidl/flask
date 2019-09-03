@@ -97,4 +97,27 @@ mysql> SELECT * FROM user;
 ```
 
 This project uses flask-sqlalchemy instead of flask-mysqldb.
-It is also using python-dotenv instead of pyyaml. 
+It is also using python-dotenv instead of pyyaml.
+
+**TODO**
+
+- [ ] Replace MySQL with Postresql. pgAdmin is a nice visual tool to manage the db. There are also ready-to-use docker containers available.
+
+
+## Large-scale Flask application structure
+
+* https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications
+* https://dev.to/aligoren/how-i-structure-my-flask-apps-3eh8
+* https://damyanon.net/post/flask-series-structure/
+* https://alysivji.github.io/flask-part1-generating-html-pages-with-mongoengine-jinja2.html
+* https://alysivji.github.io/flask-part2-building-a-flask-web-application.html
+* https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/
+* https://flask-appbuilder.readthedocs.io/en/latest/
+
+## Useful libraries and resources
+
+* https://flask-migrate.readthedocs.io/en/latest/
+* http://exploreflask.com/en/latest/index.html
+* https://hackersandslackers.com/the-art-of-building-flask-routes/
+* Centralized URL mapping: https://flask.palletsprojects.com/en/1.1.x/patterns/lazyloading/
+* https://flask.palletsprojects.com/en/1.1.x/patterns/ 

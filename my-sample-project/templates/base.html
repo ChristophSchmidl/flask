@@ -3,7 +3,11 @@
     My project
 {% endblock %}
 
+{% block navbar %}
+    {% include '_navbar.html' %}
+{% endblock %}
+
 {% block content %}
-    {% block body %}
+    {% block sub_content %}
     {% endblock %}
 {% endblock %}

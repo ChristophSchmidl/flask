@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
-    {% block body %}
-        <div class="jumbotron">
-            <h1>Index</h1>
-        </div>
+    {% block sub_content %}
+        <h1>Fancy Flask App</h1>
+        <form method="POST">
+            <input type="password" name="password"/>
+            <input type="submit"/>
+        </form>
+
+     <a href="{{ url_for("cat") }}">Can I have cheeseburgers?</a>
     {% endblock %}
