@@ -46,3 +46,55 @@ Also be sure that you are using the python interpreter of the virtual environmen
 TODO
 
 - [ ] Use dot-env (.env file) instead of settings.py
+
+
+## My-sample-project
+
+If you don't want to install mysql on your machine, just use docker instead.
+
+```
+docker run -p 3306:3306 --name my-mysql-container -e MYSQL_ROOT_PASSWORD=mysecret -d mysql:latest
+```
+
+Or create a docker-compose file
+
+```
+mysql:
+  build: docker-build-contexts/mysql
+  ports:
+    - 3306
+  environment:
+    - MYSQL_DATABASE=mydatabase
+    - MYSQL_ROOT_PASSWORD=mypassword
+```
+
+Getting the ip of the docker container:
+
+```
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+```
+
+Connecting to running container:
+
+```
+docker exec -it <container name> /bin/bash
+```
+
+Mysql commands inside the container:
+
+```
+mysql -u -p 
+<type in your password>
+mysql> CREATE DATABASE my_database;
+mysql> USE my_database;
+mysql> CREATE TABLE user(user_name varchar(30));
+mysql> INSERT INTO user(user_name) VALUES('John');
+mysql> INSERT INTO user(user_name) VALUES('Peter');
+mysql> SELECT * from user;
+mysql> UPDATE user SET user_name='Matthew' WHERE user_name='Peter';
+mysql> DELETE FROM user WHERE user_name='John';
+mysql> SELECT * FROM user;
+```
+
+This project uses flask-sqlalchemy instead of flask-mysqldb.
+It is also using python-dotenv instead of pyyaml. 
