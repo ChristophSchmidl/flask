@@ -113,11 +113,30 @@ It is also using python-dotenv instead of pyyaml.
 * https://alysivji.github.io/flask-part2-building-a-flask-web-application.html
 * https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/
 * https://flask-appbuilder.readthedocs.io/en/latest/
+* https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world-legacy
+* https://christophergs.github.io/python/2018/09/25/elegant-flask-apis-pt-1/
+* https://medium.com/@hmajid2301/implementing-sqlalchemy-with-docker-cb223a8296de
 
-## Useful libraries and resources
+## Useful resources
 
-* https://flask-migrate.readthedocs.io/en/latest/
 * http://exploreflask.com/en/latest/index.html
 * https://hackersandslackers.com/the-art-of-building-flask-routes/
 * Centralized URL mapping: https://flask.palletsprojects.com/en/1.1.x/patterns/lazyloading/
 * https://flask.palletsprojects.com/en/1.1.x/patterns/ 
+
+
+## Useful libraries
+
+* gunicorn: http://docs.gunicorn.org/en/stable/settings.html
+* Flask-DebugToolbar: https://flask-debugtoolbar.readthedocs.io/en/latest/
+* pytest: https://docs.pytest.org/en/latest/
+* pytest-cov: https://pytest-cov.readthedocs.io/en/latest/
+* Flask-SQLAlchemy: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
+* Psycopg (PostgreSQL python adapter): http://initd.org/psycopg/docs/
+* Flask-Migrate: https://flask-migrate.readthedocs.io/en/latest/ or pure Alembic: https://alembic.sqlalchemy.org/en/latest/
+* Flask-Mail: https://pythonhosted.org/Flask-Mail/
+* Flask-Limiter: https://flask-limiter.readthedocs.io/en/stable/
+* Flask-Security: https://pythonhosted.org/Flask-Security/ or Flask-Login: https://flask-login.readthedocs.io/en/latest/
+* Flask-WTF: https://flask-wtf.readthedocs.io/en/stable/ or WTForms-Components: https://wtforms-components.readthedocs.io/en/latest/
+* Celery: http://docs.celeryproject.org/en/latest/
+* Redis: https://pypi.org/project/redis/
