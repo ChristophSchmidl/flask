@@ -104,6 +104,16 @@ It is also using python-dotenv instead of pyyaml.
 - [ ] Replace MySQL with Postresql. pgAdmin is a nice visual tool to manage the db. There are also ready-to-use docker containers available.
 
 
+## helloflask
+
+This project uses docker to make the usage of postgresql and pgadmin a bit easier. All you have to do is
+
+```
+> docker-compose up -d # starting the containers
+> docker-compose down # stopping the containers
+```
+
+
 ## Large-scale Flask application structure
 
 * https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications

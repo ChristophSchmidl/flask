@@ -3,17 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-'''
 app.config.update(
-    SECRET_KEY='topsecret',
-    SQLALCHEMY_DATABASE_URI='postgresql://postgres:topsecret@localhost/catalog_db',
-    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    SECRET_KEY='mysecret',
+    SQLALCHEMY_DATABASE_URI='postgresql://postgres:mysecret@localhost/catalog_db',
+    SQLALCHEMY_TRACK_MODIFICATIONS=True
 )
 
 db = SQLAlchemy(app)
-'''
 
-db = SQLAlchemy(app)
 
 @app.route('/index')
 @app.route('/')
@@ -115,7 +112,7 @@ def jinja_macros():
 class Publication(db.Model):
     __tablename__ = 'publication'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(80), nullable=False)
 
     def __init__(self, id, name):
@@ -126,6 +123,20 @@ class Publication(db.Model):
         return 'The id is {}, name is {}'.format(self.id, self.name)
 
 if __name__ == "__main__":
+    '''
+    try:
+        db.session.execute("SELECT 1")
+        print('<h1>It works.</h1>')
+    except:
+        print('<h1>Something went wrong</h1>')
+    '''
+
     # create all tables only if they do not exist
     db.create_all()
+
+    #pub1 = Publication(2, 'Christoph Master Thesis')
+    #db.session.add(pub1)
+    #db.session.add_ll([pub1, pub2, pub3])
+    #db.session.commit()
+
     app.run(debug=True)
