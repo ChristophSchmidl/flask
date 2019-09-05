@@ -133,7 +133,7 @@ This project uses docker to make the usage of postgresql and pgadmin a bit easie
 * https://hackersandslackers.com/the-art-of-building-flask-routes/
 * Centralized URL mapping: https://flask.palletsprojects.com/en/1.1.x/patterns/lazyloading/
 * https://flask.palletsprojects.com/en/1.1.x/patterns/ 
-
+* https://blog.miguelgrinberg.com/post/migrating-from-flask-script-to-the-new-flask-cli
 
 ## Useful libraries
 
@@ -150,3 +150,4 @@ This project uses docker to make the usage of postgresql and pgadmin a bit easie
 * Flask-WTF: https://flask-wtf.readthedocs.io/en/stable/ or WTForms-Components: https://wtforms-components.readthedocs.io/en/latest/
 * Celery: http://docs.celeryproject.org/en/latest/
 * Redis: https://pypi.org/project/redis/
+* Faker: https://faker.readthedocs.io/en/master/
